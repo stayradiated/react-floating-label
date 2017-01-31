@@ -1,6 +1,6 @@
 {
   "name": "@stayradiated/react-floating-label",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A material design styled floating label input using react.js",
   "main": "dist/index.js",
   "license": "MIT",
