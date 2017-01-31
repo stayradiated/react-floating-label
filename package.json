@@ -1,22 +1,16 @@
 {
-  "name": "react-floating-label",
+  "name": "@stayradiated/react-floating-label",
   "version": "1.0.0",
   "description": "A material design styled floating label input using react.js",
   "main": "main.js",
-  "scripts": {
-    "build-js": "NODE_ENV=production rm -rf public && mkdir public && browserify app.js | uglifyjs -cm > public/bundle.js",
-    "build-css": "cat master.css > public/bundle.css",
-    "build": "npm run build-js && npm run build-css",
-    "start": "ecstatic -p 8000 public",
-    "watch-js": "watchify app.js -o public/bundle.js -dv",
-    "watch-css": "catw master.css -o public/bundle.css -v",
-    "watch": "npm run watch-js & npm run watch-css",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stayradiated/react-floating-label/issues"
   },
+  "homepage": "https://github.com/stayradiated/react-floating-label#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/code-kotis/react-floating-label.git"
+    "url": "git+https://github.com/stayradiated/react-floating-label.git"
   },
   "author": "Gokulakrishnan Kalaikovan <krishnangokul9@gmail.com> (http://gokulkrishh.github.io/about/)",
   "contributors": [
@@ -24,32 +18,37 @@
       "name": "hemanth.hm",
       "email": "hemanth.hm@gmail.com",
       "url": "http://h3manth.com"
+    },
+    {
+      "name": "George Czabania",
+      "email": "george@czabania.com"
     }
   ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/code-kotis/react-floating-label/issues"
-  },
-  "homepage": "https://github.com/code-kotis/react-floating-label#readme",
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
+  "srcPath": "lib",
+  "buildPath": "dist",
+  "testsPath": "test",
+  "scripts": {
+    "build": "pkg-build",
+    "prepublish": "pkg-build",
+    "test": "pkg-test",
+    "coverage": "pkg-coverage",
+    "lint": "pkg-lint"
   },
   "dependencies": {
-    "classnames": "^2.2.3"
-  },
-  "peerDependencies": {
-    "react": "~0.14.7"
+    "classnames": "^2.2.5",
+    "react": "^15.4.2"
   },
   "devDependencies": {
-    "babelify": "^7.0.0",
-    "browserify": "^12.0.0",
-    "catw": "~0.0.1",
-    "ecstatic": "~1.4.0",
-    "snyk": "^1.21.2",
-    "uglify-js": "^2.4.24",
-    "watchify": "^3.2.3"
+    "@stayradiated/pkg": "^1.1.2"
   },
-  "snyk": true
+  "babel": {
+    "presets": [
+      [
+        "stayradiated",
+        {
+          "runtime": false
+        }
+      ]
+    ]
+  }
 }
